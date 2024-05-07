@@ -1,0 +1,38 @@
+
+import product  from "../../component/data/product"
+import { FaHome } from "react-icons/fa";
+import { BsAirplaneFill } from "react-icons/bs";
+
+function HomePage(){
+    return(
+        <div>
+            <div style={{padding:20, backgroundColor:"gray"}}>
+                <h1>Show Icon</h1>
+                <FaHome  style={{fontSize:40}}/>
+                <BsAirplaneFill style={{fontSize:40}} />
+            </div>
+            <div  style={{padding:10,backgroundColor:"skyblue", margin:5,textAlign:"center",fontSize:22,fontWeight:"bold"}}>How To Render List</div>
+            <div style={{display:'flex'}}>
+                {product.map((item,index)=>(
+                    <div key={index} style={{padding:10,backgroundColor:"gray", margin:5,borderRadius:10}}> 
+                        <div>
+                            <img src={item.image} style={{width:200,height:200}}/>
+                        </div>
+                        <div style={{ fontSize:22, fontWeight:"bold"}}>{index+1}. {item.barcode}-{item.name}</div>
+                        <div>Price: {item.price+"$"}</div>
+                        <div>Qty : {item.qty}</div>
+                        <div style={{display:'flex',marginTop:5}}>
+                            {item.color.map((item1,index1)=>(
+                                <div style={{width:40,height:40, backgroundColor:item1,margin:2, borderRadius:10}}>{item1}</div>
+                            ))}
+                        </div>
+                    </div>
+                   
+                ))}
+            
+            </div>
+        </div>
+        
+    )
+}
+export default HomePage

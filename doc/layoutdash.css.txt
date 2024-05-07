@@ -1,0 +1,49 @@
+.mainHeader{
+    background-color: rgb(80, 140, 172);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+}
+
+.branchContain{
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.img_logo{
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.txtBranch{
+    font-size: 26px;
+    font-weight: bold;
+    color: whitesmoke;
+    
+}
+
+.txtSubBranch{
+    color: gray;
+    font-size: 15px;
+    color: whitesmoke;
+}
+
+.menu{
+    list-style-type: none;
+    display: flex;
+    color: whitesmoke;
+}
+
+.menu_item {
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu_item:hover{
+    text-decoration: underline;
+    color: rgb(17, 130, 230);
+}

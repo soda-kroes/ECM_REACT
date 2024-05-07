@@ -1,0 +1,141 @@
+import { useState } from "react"
+
+function HomePage(){
+    //State in React Js
+    //1. Syntax:
+    //const [state_name,setter] = useState(init);
+    const [username,setUsername]=useState("");
+    const [password,setPassword]=useState("");
+    const [a,setA] = useState(0);
+    const [b,setB] = useState(0);
+    const [result,setResult] = useState(0);
+    const [box,setBox] = useState([]);
+
+    const onChangeValueA = (event) =>{
+        setA(event.target.value)
+    }
+    const onChangeValueB = (event) =>{
+        setB(event.target.value)
+    }
+
+    // const onClickSum = () =>{
+    //     var sum = Number(a) + Number(b);
+    //     setResult(sum);
+    // }
+    
+    const onClickOperation = (type) =>{
+        //lert(type);
+        var dataA = Number(a);
+        var dataB = Number(b);
+        var res = 0;
+        if(type=="sum"){
+            res=dataA+dataB;
+        }
+        else if(type=="sub"){
+            res=dataA-dataB;
+        }
+        else if(type=="mul"){
+            res=dataA * dataB;
+        }
+        else if(type=="div"){
+            res=dataA / dataB;
+        }
+        else{
+            res='no operation';
+        }
+        setResult(type + " = "+res);
+    }
+
+
+
+    const onClickSubmit = () =>{
+        alert("username: "+username+" "+"Password: "+password);
+     
+    }
+
+    const onUsernameChange = (event) =>{
+       // console.log(event.target.value);
+       setUsername(event.target.value);
+        
+
+    }
+    const onPasswordChange = (event)=>{
+        // console.log(event.target.value)
+        setPassword(event.target.value);
+    }
+
+    const onChangeUserInfo = () =>{
+        alert(90909);
+        setName("vanda");
+        setGender("female");
+        setAge("20");
+    }
+
+    const onClickAddBox = () =>{
+        var tmp = box;
+        tmp.push(1);
+        setBox([...tmp]);
+    }
+    
+   
+    const [x,setX]= useState(30);
+    const [name,setName] = useState("soda");
+    const [gender,setGender] = useState("male");
+    const [age,setAge] = useState("18");
+    const [course,setCourse] = useState(["Java","C#","Dotnet","Spring"]);
+    const [product,setProduct] = useState({
+        id:1001,
+        name: 'Coca',
+        price: '24$'
+    });
+
+     const onChangeX = () =>{  
+        setX(90);
+    }
+
+    
+    return(
+        <div style={{padding:40}}>
+            <h1>Demo Box</h1>
+            <button onClick={onClickAddBox}>Add Box</button>
+            {box.map((item,index)=>{
+                return(
+                    <div style={{width:30,height:30,backgroundColor:"pink", margin:5}}>
+                        {index+1}
+                    </div>
+                )
+                })}
+            <h1>X: {x}</h1>
+            <button onClick={onChangeX}>Change Value X</button>
+
+
+            <h1>React & Component</h1>
+            <h1>My Name: {name}</h1>
+            <h1>Gender: {gender}</h1>
+            <h1>Age: {age}</h1>
+            <h1>{course.length}-{course[0]}</h1>
+            <h1>{product.price}</h1>
+            <button onClick={onChangeUserInfo}>Change User Infomation</button>
+            <hr />
+            <h1>Login Form</h1>
+            <h1>Show Value With State Render</h1>
+            <h2>{username},{password}</h2>
+            <input placeholder="username" onChange={onUsernameChange} />
+            <input placeholder="password" onChange={onPasswordChange}/>
+            <button onClick={onClickSubmit}>submit</button>
+            <hr></hr>
+            <h1>Operator</h1>
+            <input onChange={onChangeValueA} style={{padding:10, marginRight:3}} placeholder="Enter Value A"/>
+            <input onChange={onChangeValueB} style={{padding:10}} placeholder="Enter Value B"/>
+            <h2>Result : {result}</h2>
+            <div>
+                <button onClick={()=>onClickOperation("sum")}>Sum</button>
+                <button onClick={()=>onClickOperation("sub")}>Sub</button>
+                <button onClick={()=>onClickOperation("mul")}>Mul</button>
+                <button onClick={()=>onClickOperation("div")}>Div</button>
+            </div>
+        </div>
+        
+    )
+}
+export default HomePage
