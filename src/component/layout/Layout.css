@@ -1,0 +1,48 @@
+.mainHeader{
+    background-color: rgb(255, 254, 254);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
+
+.branchContain{
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.img_logo{
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.txtBranch{
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+    
+}
+
+.txtSubBranch{
+    font-size: 15px;
+    color: black;
+}
+
+.menu{
+    list-style-type: none;
+    display: flex;
+    color: black;
+}
+
+.menu_item {
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu_item:hover{
+    text-decoration: underline;
+    color: rgb(17, 130, 230);
+}

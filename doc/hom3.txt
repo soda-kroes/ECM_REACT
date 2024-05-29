@@ -1,0 +1,45 @@
+
+
+
+import React, { useState } from 'react'
+import ProductList from '../../component/list/ProductList'
+import logo from "../../assets/logo/nit.jpeg"
+
+function HomePage() {
+
+  const [product,setProduct] = useState([
+    {
+        id: 101,
+        p_name: "Macbook 2016",
+        p_price: 1200,
+        description: "256 SDD, RAM 8G",
+        imageName: logo
+    },
+    {
+      id: 102,
+      p_name: "Macbook 2024",
+      p_price: 1900,
+      description: "256 SDD, RAM 8G",
+      imageName: logo
+  }
+  ]);
+  return (
+    <div style={{padding:10}}>
+        <h1>React & Component</h1>
+        <hr />
+        <h1>List Product</h1>
+        {product.map((item,index)=>{
+          return(
+            <ProductList 
+              key={index}
+              name={item.p_name}
+              price={item.p_price}
+              description={item.description}
+              imageName={item.imageName}
+             />
+          )
+        })}
+    </div>
+  )
+}
+export default HomePage

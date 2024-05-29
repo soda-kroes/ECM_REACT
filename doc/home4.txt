@@ -1,0 +1,28 @@
+
+import { Button, Space } from 'antd';
+import { useState } from 'react';
+import CarouselHome from '../../component/carousel/CarouselHome';
+
+
+const HomePage = () =>{
+  const [loading,setLoading] = useState(false);
+  const handleButtonClick = () =>{
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  } 
+  return(
+    <div style={{padding:10}}>
+      <CarouselHome />
+     
+        <h1>using antd</h1>
+        <Button onClick={handleButtonClick} type="primary" loading={loading}>Add New</Button>
+        <Space direction='horizontal'>
+        <Button danger>Delete </Button>
+        <Button danger>Delete </Button>
+        </Space>
+    </div>
+  )
+}
+export default HomePage;
